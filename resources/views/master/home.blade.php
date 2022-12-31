@@ -31,6 +31,7 @@
     </div>
 
     <!-- Offcanvas Menu Begin -->
+    @php $locale = session()->get('locale'); @endphp
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__option">
@@ -67,23 +68,14 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-7">
                         <div class="header__top__left">
-                            <p>Free shipping, 30-day return or refund guarantee.</p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
-                                <a href="#">Sign in</a>
                                 <a href="#">FAQs</a>
                             </div>
-                            <div class="header__top__hover">
-                                <span>Usd <i class="arrow_carrot-down"></i></span>
-                                <ul>
-                                    <li>USD</li>
-                                    <li>EUR</li>
-                                    <li>USD</li>
-                                </ul>
-                            </div>
+                            @include('master/language_switcher')
                         </div>
                     </div>
                 </div>
@@ -99,19 +91,20 @@
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li class="active"><a href="{{ route('home') }}">Home</a></li>
-                            <li><a href="{{ route('shop') }}">Shop</a></li>
-                            <li><a href="#">Pages</a>
+                            <li class="active"><a href="{{ route('home') }}">{{  __('Trang chủ') }}</a></li>
+                            <li><a href="{{ route('shop') }}">{{  __('Cửa hàng') }}</a></li>
+                            <li><a href="#">{{  __('Trang') }}</a>
                                 <ul class="dropdown">
-                                    <li><a href="{{ route('about') }}">About Us</a></li>
-                                    <li><a href="{{ route('shop.details') }}">Shop Details</a></li>
-                                    <li><a href="{{ route('shoppingcart') }}">Shopping Cart</a></li>
-                                    <li><a href="{{ route('checkout') }}">Check Out</a></li>
-                                    <li><a href="{{ route('blog.details') }}">Blog Details</a></li>
+                                    <li><a href="{{ route('about') }}">{{  __('Giới thiệu') }}</a></li>
+                                    <li><a href="{{ route('shop.details') }}">{{  __('Chi tiết hàng') }}</a></li>
+                                    <li><a href="{{ route('shoppingcart') }}">{{  __('Giỏ hàng') }}</a></li>
+                                    <li><a href="{{ route('checkout') }}">{{  __('Thanh toán') }}</a></li>
+                                    <li><a href="{{ route('blog.details') }}">{{  __('Chi tiết tin') }}</a></li>
+                                    
                                 </ul>
                             </li>
-                            <li><a href="{{ route('blog') }}">Blog</a></li>
-                            <li><a href="{{ route('contact') }}">Contacts</a></li>
+                            <li><a href="{{ route('blog') }}">{{  __('Tin tức') }}</a></li>
+                            <li><a href="{{ route('contact') }}">{{  __('Liên hệ') }}</a></li>
                         </ul>
                     </nav>
                 </div>

@@ -12,21 +12,16 @@ class LangController extends Controller
      *
      * @return \Illuminate\Http\Response
     */
-    public function index()
-    {
-        return view('lang');
-    }
   
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
     */
-    public function change(Request $request)
+    public function lang($locale)
     {
-        App::setLocale($request->lang);
-        session()->put('locale', $request->lang);
-  
+        App::setLocale($locale);
+        session()->put('locale', $locale);
         return redirect()->back();
     }
 }

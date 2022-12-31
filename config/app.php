@@ -82,7 +82,14 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'vi',
+
+    // Bổ sung thêm danh sách các ngôn ngữ
+    'available_locales' => [
+        'English' => 'en',
+        'Tiếng Việt' => 'vi',
+      ],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -95,7 +102,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'vi',
 
     /*
     |--------------------------------------------------------------------------

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LangController;
+use App\Http\Controllers\SubscriberController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +35,10 @@ Route::get('checkout', [HomeController::class, 'checkout'])->name('checkout');
 
 Route::get('shopping-cart', [HomeController::class, 'shoppingCart'])->name('shoppingcart');
 
-Route::get('lang/home', [LangController::class, 'index']);
+Route::get('language/{locale}', function ($locale) {
+  app()->setLocale($locale);
+  session()->put('locale', $locale);
+  return redirect()->back();
+});
 
-Route::get('lang/change', [LangController::class, 'change'])->name('changeLang');
-
+Route::post('/subscribe', [SubscriberController::class, 'subscribe']);
